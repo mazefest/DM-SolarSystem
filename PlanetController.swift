@@ -8,7 +8,7 @@
 import Foundation
 
 class PlanetController {
-    let shared = PlanetController()
+    static var shared = PlanetController()
     
     let allplanets = PlanetInfo.allPlanetInfo()
     
