@@ -4,7 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,6 +36,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qab-Ps-Zjf" kind="show" id="aw5-c2-Er7"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -65,8 +70,156 @@
             </objects>
             <point key="canvasLocation" x="-465.21739130434787" y="-575.22321428571422"/>
         </scene>
+        <!--Planet Detail View Controller-->
+        <scene sceneID="XhZ-Ik-3s7">
+            <objects>
+                <viewController id="Qab-Ps-Zjf" customClass="PlanetDetailViewController" customModule="SolarSystem" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qkH-lP-RGF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dxt-uU-tql">
+                                <rect key="frame" x="87" y="107" width="240" height="300"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jupiter" translatesAutoresizingMaskIntoConstraints="NO" id="DmR-dQ-zsY" userLabel="PlanetImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="279.5"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6JD-q1-DiG">
+                                        <rect key="frame" x="0.0" y="279.5" width="240" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tZ-ni-U37" userLabel="PlanetName">
+                                                <rect key="frame" x="0.0" y="0.0" width="64" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l5-n6-asE" userLabel="PlanetNamesake">
+                                                <rect key="frame" x="72" y="0.0" width="168" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="9Ng-00-4Ei"/>
+                                    <constraint firstAttribute="width" constant="240" id="l1i-Fr-dwx"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0r-yo-sWd">
+                                <rect key="frame" x="87" y="437" width="115" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGI-CP-uCF" userLabel="PlanetOrder">
+                                        <rect key="frame" x="0.0" y="0.0" width="73.5" height="37"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="31"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-Fl-Lzo" userLabel="OrdinalSuffix">
+                                        <rect key="frame" x="73.5" y="0.0" width="41.5" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gus-9g-LYK">
+                                <rect key="frame" x="7" y="499" width="380" height="298"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bdu-B0-5As">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PlanetDetailCell" id="MfS-oX-AIu" customClass="DetailCollectionViewCell" customModule="SolarSystem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6vJ-S2-CsC">
+                                            <rect key="frame" x="0.0" y="0.0" width="175" height="75"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LqH-y5-xYO" userLabel="DetailIcon">
+                                                    <rect key="frame" x="8" y="8" width="27" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="G2q-pL-8cK"/>
+                                                        <constraint firstAttribute="height" constant="27" id="hoA-2G-ftM"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="P2I-vY-2f1">
+                                                    <rect key="frame" x="40" y="14" width="135" height="34"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2Q-F1-UuQ" userLabel="Title">
+                                                            <rect key="frame" x="0.0" y="0.0" width="135" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xym-5Y-mIf" userLabel="Detail">
+                                                            <rect key="frame" x="0.0" y="17" width="135" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LqH-y5-xYO" firstAttribute="top" secondItem="6vJ-S2-CsC" secondAttribute="topMargin" id="Hcu-xb-XHb"/>
+                                                <constraint firstItem="LqH-y5-xYO" firstAttribute="trailing" secondItem="P2I-vY-2f1" secondAttribute="leading" constant="-5" id="gH2-qX-eRs"/>
+                                                <constraint firstAttribute="trailing" secondItem="P2I-vY-2f1" secondAttribute="trailing" id="p6n-NG-jRw"/>
+                                                <constraint firstItem="LqH-y5-xYO" firstAttribute="leading" secondItem="6vJ-S2-CsC" secondAttribute="leadingMargin" id="pyh-cS-FcJ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="175" height="75"/>
+                                        <connections>
+                                            <outlet property="planetDetailDetail" destination="Xym-5Y-mIf" id="XZN-VX-Qw5"/>
+                                            <outlet property="planetDetailIcon" destination="LqH-y5-xYO" id="HqY-dE-Ahb"/>
+                                            <outlet property="planetDetailTitle" destination="G2Q-F1-UuQ" id="2gY-SZ-woW"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Qab-Ps-Zjf" id="yGa-xE-2DP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1P7-zu-0tQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dxt-uU-tql" firstAttribute="top" secondItem="1P7-zu-0tQ" secondAttribute="top" constant="15" id="GZc-l5-5a6"/>
+                            <constraint firstItem="iGI-CP-uCF" firstAttribute="bottom" secondItem="DmR-dQ-zsY" secondAttribute="bottom" id="LwD-Jo-ell"/>
+                            <constraint firstItem="iGI-CP-uCF" firstAttribute="leading" secondItem="DmR-dQ-zsY" secondAttribute="leading" id="PJA-cw-a8s"/>
+                            <constraint firstItem="dxt-uU-tql" firstAttribute="centerX" secondItem="qkH-lP-RGF" secondAttribute="centerX" id="hwG-WO-4Dz"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RhB-Hg-D23">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="Axd-Xu-4GQ" userLabel="favoriteButton">
+                            <connections>
+                                <action selector="onFavoriteButtonTapped:" destination="Qab-Ps-Zjf" id="Odf-hY-cAO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="detailCollectionView" destination="Gus-9g-LYK" id="WWb-IM-7u1"/>
+                        <outlet property="favoriteButton" destination="Axd-Xu-4GQ" id="btt-2s-0ao"/>
+                        <outlet property="planetImage" destination="DmR-dQ-zsY" id="Zim-6F-03N"/>
+                        <outlet property="planetName" destination="2tZ-ni-U37" id="6ZF-lY-Bda"/>
+                        <outlet property="planetNamesake" destination="8l5-n6-asE" id="7Jh-c8-hGK"/>
+                        <outlet property="planetOrder" destination="iGI-CP-uCF" id="1mm-0i-lfT"/>
+                        <outlet property="planetOrdinalSuffix" destination="bRp-Fl-Lzo" id="EWT-LR-Dmn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bra-GD-i7s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452.6717557251907" y="-575.35211267605632"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="jupiter" width="348" height="348"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

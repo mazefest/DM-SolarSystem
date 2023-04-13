@@ -10,4 +10,5 @@ import Foundation
 struct CellUtil {
 
     static let planetCell = "PlanetCell"
+    static let planetDeatilCell = "PlanetDetailCell"
 }

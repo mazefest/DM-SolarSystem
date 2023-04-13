@@ -12,10 +12,12 @@
 		1B07B24B28866682003E5922 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B07B24928866682003E5922 /* Main.storyboard */; };
 		1B07B24D28866683003E5922 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B07B24C28866683003E5922 /* Assets.xcassets */; };
 		1B07B25028866683003E5922 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B07B24E28866683003E5922 /* LaunchScreen.storyboard */; };
+		77B4A3FF29DE50F300012F74 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B4A3FE29DE50F300012F74 /* DetailCollectionViewCell.swift */; };
 		77C2406E29DD1E29003454E3 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2406C29DD1E29003454E3 /* Planet.swift */; };
 		77C2406F29DD1E29003454E3 /* PlanetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2406D29DD1E29003454E3 /* PlanetController.swift */; };
 		77C2407129DD2949003454E3 /* PlanetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2407029DD2949003454E3 /* PlanetViewController.swift */; };
 		77C2407329DD3383003454E3 /* CellUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2407229DD3382003454E3 /* CellUtil.swift */; };
+		77C2407529DDBD0B003454E3 /* PlanetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C2407429DDBD0B003454E3 /* PlanetDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,10 +28,12 @@
 		1B07B24C28866683003E5922 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B07B24F28866683003E5922 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B07B25128866683003E5922 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B4A3FE29DE50F300012F74 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		77C2406C29DD1E29003454E3 /* Planet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		77C2406D29DD1E29003454E3 /* PlanetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanetController.swift; sourceTree = "<group>"; };
 		77C2407029DD2949003454E3 /* PlanetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetViewController.swift; sourceTree = "<group>"; };
 		77C2407229DD3382003454E3 /* CellUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellUtil.swift; sourceTree = "<group>"; };
+		77C2407429DDBD0B003454E3 /* PlanetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +71,9 @@
 				1B07B24328866682003E5922 /* AppDelegate.swift */,
 				1B07B24528866682003E5922 /* SceneDelegate.swift */,
 				1B07B24928866682003E5922 /* Main.storyboard */,
+				77B4A3FE29DE50F300012F74 /* DetailCollectionViewCell.swift */,
 				77C2407029DD2949003454E3 /* PlanetViewController.swift */,
+				77C2407429DDBD0B003454E3 /* PlanetDetailViewController.swift */,
 				77C2407229DD3382003454E3 /* CellUtil.swift */,
 				1B07B24C28866683003E5922 /* Assets.xcassets */,
 				1B07B24E28866683003E5922 /* LaunchScreen.storyboard */,
@@ -147,8 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C2407529DDBD0B003454E3 /* PlanetDetailViewController.swift in Sources */,
 				77C2407129DD2949003454E3 /* PlanetViewController.swift in Sources */,
 				1B07B24428866682003E5922 /* AppDelegate.swift in Sources */,
+				77B4A3FF29DE50F300012F74 /* DetailCollectionViewCell.swift in Sources */,
 				1B07B24628866682003E5922 /* SceneDelegate.swift in Sources */,
 				77C2407329DD3383003454E3 /* CellUtil.swift in Sources */,
 				77C2406E29DD1E29003454E3 /* Planet.swift in Sources */,
